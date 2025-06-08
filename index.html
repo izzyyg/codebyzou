@@ -84,6 +84,8 @@
       border-radius: 10px;
       display: inline-block;
       margin-top: 10px;
+      cursor: pointer;
+      border: none;
     }
     .btn:hover {
       background: #ff3333;
@@ -147,11 +149,12 @@
   </div>
 
   <div id="bots" class="tab-content">
-    <form>
+    <form id="botForm" onsubmit="submitBotOrder(event)">
       <h2>🧠 Order a Custom Discord Bot</h2>
-      <input type="text" placeholder="Your Discord Username" required />
-      <textarea rows="5" placeholder="Describe the bot you want (commands, features, etc.)" required></textarea>
-      <a href="#" class="btn">Submit</a>
+      <input type="text" name="username" placeholder="Your Discord Username" required />
+      <input type="email" name="email" placeholder="Your Email (for updates)" required />
+      <textarea name="description" rows="5" placeholder="Describe the bot you want (commands, features, etc.)" required></textarea>
+      <button type="submit" class="btn">Submit</button>
     </form>
   </div>
 
@@ -192,10 +195,33 @@
 
   <script>
     function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => {
-        el.classList.remove('active');
-      });
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
+    }
+
+    async function submitBotOrder(event) {
+      event.preventDefault();
+      const form = event.target;
+      const data = {
+        username: form.username.value,
+        email: form.email.value,
+        description: form.description.value
+      };
+      const payload = {
+        content: `📦・**New Bot Order Received**\n👤 Username: ${data.username}\n📧 Email: ${data.email}\n🛠️ Description:\n${data.description}`
+      };
+
+      // Replace this webhook URL with the one that belongs to channel ID 1381087000928718898
+      await fetch("https://discord.com/api/webhooks/1381087035544309922/gmIC444Vxlh1-ToZ8k2HPhBAn0Xw8lMtE6FkZiMr1swbpAm6IerDvSs7B_Ps8IRpV8OC", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      alert("Your request has been sent! I’ll contact you on Discord or Email soon.");
+      form.reset();
     }
   </script>
 </body>
