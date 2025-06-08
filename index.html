@@ -3,142 +3,200 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Code by Zou</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Zou's Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      background-color: #0e0e0e;
-      font-family: 'Orbitron', sans-serif;
-      color: #eee;
       margin: 0;
-      padding: 0;
-    }
-    .navbar {
-      background-color: #1a1a1a;
-      border-bottom: 2px solid red;
-    }
-    .nav-link {
+      font-family: 'Orbitron', sans-serif;
+      background: #0c0c0c;
       color: #fff;
-      transition: 0.3s;
     }
-    .nav-link:hover {
-      color: red;
-    }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-      animation: fadeIn 1s ease-in;
-    }
-    h1, h2 {
-      color: red;
-    }
-    .card {
-      background: #1a1a1a;
-      border: 2px solid red;
-      color: #fff;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-    }
-    .btn-red {
-      background-color: red;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
-    }
-    .btn-red:hover {
-      background-color: #ff3333;
-    }
-    footer {
+    header {
+      background: #111;
       padding: 20px;
       text-align: center;
-      color: #aaa;
+      box-shadow: 0 4px 10px rgba(255,0,0,0.3);
+    }
+    header h1 {
+      color: red;
+      font-size: 40px;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #111;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(255,0,0,0.2);
+    }
+    nav a {
+      color: #eee;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: #1a1a1a;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: red;
+    }
+    .tab-content {
+      display: none;
+      padding: 30px;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
     }
     @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .product {
+      background: #111;
+      border: 2px solid red;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    }
+    .product h2 {
+      color: red;
+      font-size: 22px;
+    }
+    .price {
+      font-size: 24px;
+      color: #0f0;
+      margin: 10px 0;
+    }
+    .btn {
+      background: red;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #ff3333;
+    }
+    form {
+      background: #111;
+      padding: 20px;
+      border: 2px solid red;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand text-danger fw-bold" href="#">Code by Zou</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#website">Websites</a></li>
-          <li class="nav-item"><a class="nav-link" href="#bots">Bots</a></li>
-          <li class="nav-item"><a class="nav-link" href="#edits">Edits</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+  <header>
+    <h1>Zou's Marketplace</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showTab('websites')">Websites</a>
+    <a href="#" onclick="showTab('bots')">Discord Bots</a>
+    <a href="#" onclick="showTab('edits')">Edits</a>
+    <a href="#" onclick="showTab('contact')">Contact</a>
   </nav>
 
-  <section class="section" id="website">
-    <h2>🔥 Websites</h2>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-4 mb-4">
-          <div class="card p-3">
-            <h4>Basic</h4>
-            <p>One-page site</p>
-            <h5>$50</h5>
-            <a href="#" class="btn btn-red">Buy</a>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card p-3">
-            <h4>Standard</h4>
-            <p>Multi-page w/ animations</p>
-            <h5>$150</h5>
-            <a href="#" class="btn btn-red">Buy</a>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card p-3">
-            <h4>Advanced</h4>
-            <p>Backend, database, admin</p>
-            <h5>$400</h5>
-            <a href="#" class="btn btn-red">Buy</a>
-          </div>
-        </div>
-      </div>
+  <div id="websites" class="tab-content active">
+    <div class="product">
+      <h2>🔥 Basic Website</h2>
+      <p>Clean one-page site.</p>
+      <div class="price">$50</div>
+      <a href="#" class="btn">Buy Now</a>
     </div>
-  </section>
+    <div class="product">
+      <h2>🛠 Standard Website</h2>
+      <p>Multi-page with animation.</p>
+      <div class="price">$150</div>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+    <div class="product">
+      <h2>🚀 Advanced Website</h2>
+      <p>Includes backend & dashboard.</p>
+      <div class="price">$400</div>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+  </div>
 
-  <section class="section" id="bots">
-    <h2>🤖 Discord Bots</h2>
-    <p>Fill out what features you want and get your bot delivered fast!</p>
-    <form class="container" style="max-width: 500px;">
-      <div class="mb-3">
-        <label class="form-label">Your Email or Discord Tag</label>
-        <input type="text" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Bot Description</label>
-        <textarea class="form-control" rows="5" required></textarea>
-      </div>
-      <button class="btn btn-red" type="submit">Submit Bot Request</button>
+  <div id="bots" class="tab-content">
+    <form>
+      <h2>🧠 Order a Custom Discord Bot</h2>
+      <input type="text" placeholder="Your Discord Username" required />
+      <textarea rows="5" placeholder="Describe the bot you want (commands, features, etc.)" required></textarea>
+      <a href="#" class="btn">Submit</a>
     </form>
-  </section>
+  </div>
 
-  <section class="section" id="edits">
-    <h2>🎨 Graphics & Edits</h2>
-    <div class="container">
-      <p>We create thumbnails, PFPs, intros and more!</p>
-      <a href="https://discord.gg/wEApuAbN9t" class="btn btn-red">Order via Discord</a>
+  <div id="edits" class="tab-content">
+    <div class="product">
+      <h2>🖼️ Profile Picture Pack</h2>
+      <p>Custom Discord/TikTok PFPs</p>
+      <div class="price">$15</div>
+      <a href="#" class="btn">Buy Now</a>
     </div>
-  </section>
+    <div class="product">
+      <h2>🎥 Video Intro Animation</h2>
+      <p>3D/Motion graphic style intros</p>
+      <div class="price">$20</div>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+    <div class="product">
+      <h2>💻 UI Dashboard Kit</h2>
+      <p>Dark panel-style dashboard UI</p>
+      <div class="price">$25</div>
+      <a href="#" class="btn">Buy Now</a>
+    </div>
+  </div>
 
-  <section class="section" id="contact">
-    <h2>📱 Connect</h2>
-    <a href="https://discord.gg/wEApuAbN9t" target="_blank" class="btn btn-red m-2">Join Discord</a>
-    <a href="https://www.tiktok.com/@davi7201311" target="_blank" class="btn btn-red m-2">Follow TikTok</a>
-  </section>
+  <div id="contact" class="tab-content">
+    <form>
+      <h2>📩 Contact Me</h2>
+      <input type="text" placeholder="Your Name" required />
+      <textarea rows="5" placeholder="Your Message..." required></textarea>
+      <a href="https://discord.gg/wEApuAbN9t" target="_blank" class="btn">Join Discord</a>
+      <a href="https://www.tiktok.com/@davi7201311" target="_blank" class="btn">View TikTok</a>
+    </form>
+  </div>
 
   <footer>
-    &copy; 2025 Code by Zou. All rights reserved.
+    &copy; 2025 Zou's Marketplace. All rights reserved.
   </footer>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
