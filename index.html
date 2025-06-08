@@ -1,111 +1,141 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Code by Zou</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #121212;
-      color: #EEEEEE;
-      font-family: sans-serif;
-      text-align: center;
-      padding: 100px;
+      background-color: #0e0e0e;
+      font-family: 'Orbitron', sans-serif;
+      color: #eee;
       margin: 0;
+      padding: 20px;
+      text-align: center;
     }
 
     h1 {
+      color: red;
       font-size: 48px;
-      color: #1ABC9C;
-    }
-
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #1ABC9C;
-      color: #000;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    .service {
-      background-color: #1e1e1e;
-      margin: 30px auto;
-      padding: 20px;
-      max-width: 600px;
-      border-radius: 12px;
-      text-align: left;
-      color: #EEEEEE;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .service h2 {
-      color: #1ABC9C;
       margin-bottom: 10px;
     }
 
-    .services {
-      margin-top: 50px;
-      color: #FFFFFF;
+    p {
+      font-size: 18px;
+      margin-bottom: 40px;
     }
 
-    .services h2 {
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: red;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff3333;
+    }
+
+    .product-card {
+      background: #1a1a1a;
+      border: 2px solid red;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 320px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    }
+
+    .product-card h2 {
+      color: #ff4444;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 16px;
+    }
+
+    .price {
+      font-size: 24px;
+      color: red;
+      margin: 10px 0;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: red;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #ff3333;
+    }
+
+    .section-title {
       color: #1ABC9C;
       font-size: 28px;
+      margin-top: 60px;
     }
 
-    .services ul {
+    ul {
       list-style: none;
       padding: 0;
     }
 
-    .services li {
+    li {
       font-size: 18px;
       margin: 10px 0;
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Code by Zou</h1>
-    <p>Made by Davi</p>
-    <p>I build bots, mods, tools, edits, and full custom websites — fast and clean.</p>
-    <a href="https://discord.com/users/666081987823665212" class="btn" target="_blank">Contact Me on Discord</a>
+  <h1>Code by Zou</h1>
+  <p>I make bots, mods, tools, graphics, and websites that look 🔥</p>
 
-    <!-- Services -->
-    <section class="service">
-      <h2>💻 Coding Services</h2>
-      <p>Discord bots, websites, custom tools, and automations made for any use.</p>
-    </section>
+  <a href="https://discord.com/users/666081987823665212" target="_blank" class="btn">💬 Contact Me on Discord</a>
 
-    <section class="service">
-      <h2>🎨 Edits</h2>
-      <p>Profile pics, thumbnails, 3D intros, and custom banners.</p>
-    </section>
+  <!-- Website Tiers -->
+  <div class="product-card">
+    <h2>🔥 Basic Website</h2>
+    <p>Clean, fast one-page site for personal or portfolio use.</p>
+    <div class="price">$50</div>
+    <a href="https://buy.stripe.com/test_00g8zD3RD5ML4vqeUU" class="buy-btn">Buy Now</a>
+  </div>
 
-    <section class="service">
-      <h2>🎮 Game Mods</h2>
-      <p>FiveM scripts, Minecraft mods, and more. Custom or pre-built.</p>
-    </section>
+  <div class="product-card">
+    <h2>🛠 Standard Website</h2>
+    <p>Multi-page site with animations, contact form, and mobile support.</p>
+    <div class="price">$150</div>
+    <a href="https://buy.stripe.com/test_eVa5m3eSZgBF4vqcMN" class="buy-btn">Buy Now</a>
+  </div>
 
-    <section class="service">
-      <h2>📦 Tools</h2>
-      <p>Small programs and scripts made to help you save time or automate tasks.</p>
-    </section>
+  <div class="product-card">
+    <h2>🚀 Advanced Website</h2>
+    <p>Fully custom site with backend, database, dashboard, and more.</p>
+    <div class="price">$400</div>
+    <a href="https://buy.stripe.com/test_28k8zD5Zz3iBfWkeUX" class="buy-btn">Buy Now</a>
+  </div>
 
-    <!-- Extra Services Summary -->
-    <div class="services">
-      <h2>Services I Offer</h2>
-      <ul>
-        <li>📦 Discord Bots</li>
-        <li>🖼️ Graphics & Edits</li>
-        <li>🕹️ Game Mods</li>
-        <li>🌐 Websites</li>
-        <li>🛠️ Tools & Utilities</li>
-      </ul>
-    </div>
-  </main>
+  <!-- Other Services -->
+  <h2 class="section-title">🛠️ Other Services I Offer</h2>
+  <ul>
+    <li>🤖 Discord Bots (Auto stock, moderation, etc.)</li>
+    <li>🖼️ Graphics & Edits (Thumbnails, PFPs, 3D intros)</li>
+    <li>🎮 Game Mods (FiveM, Minecraft, etc.)</li>
+    <li>⚙️ Custom Tools & Scripts</li>
+    <li>🌐 Websites for any project</li>
+  </ul>
 </body>
 </html>
+<a href="https://buy.stripe.com/real_checkout_link_here" class="buy-btn">Buy Now</a>
