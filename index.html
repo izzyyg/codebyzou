@@ -5,168 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Code by Zou</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     body {
       background-color: #0e0e0e;
       font-family: 'Orbitron', sans-serif;
       color: #eee;
       margin: 0;
-      padding: 20px;
-      text-align: center;
+      padding: 0;
     }
-
-    h1 {
-      color: red;
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    nav {
-      margin: 30px 0;
-    }
-
-    nav button {
+    .navbar {
       background-color: #1a1a1a;
-      color: #1ABC9C;
-      border: 2px solid red;
-      border-radius: 8px;
-      padding: 10px 20px;
-      margin: 0 10px;
-      cursor: pointer;
-      font-weight: bold;
+      border-bottom: 2px solid red;
     }
-
-    nav button.active, nav button:hover {
-      background-color: red;
+    .nav-link {
       color: #fff;
+      transition: 0.3s;
     }
-
-    .tab-content {
-      display: none;
+    .nav-link:hover {
+      color: red;
     }
-
-    .tab-content.active {
-      display: block;
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
     }
-
-    .product-card {
+    h1, h2 {
+      color: red;
+    }
+    .card {
       background: #1a1a1a;
       border: 2px solid red;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px auto;
-      width: 320px;
+      color: #fff;
       box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
     }
-
-    .product-card h2 {
-      color: #ff4444;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-size: 24px;
-      color: red;
-      margin: 10px 0;
-    }
-
-    .buy-btn {
-      padding: 10px 20px;
-      background: red;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    form textarea {
-      width: 80%;
-      height: 120px;
-      margin: 20px auto;
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    form button {
-      padding: 10px 20px;
-      font-weight: bold;
+    .btn-red {
       background-color: red;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+    .btn-red:hover {
+      background-color: #ff3333;
+    }
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: #aaa;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
-  <h1>Code by Zou</h1>
-  <p>I make bots, mods, tools, graphics, and websites that look 🔥</p>
-
-  <nav>
-    <button class="tab-button active" data-tab="websites">Websites</button>
-    <button class="tab-button" data-tab="bots">Discord Bots</button>
-    <button class="tab-button" data-tab="graphics">Graphics/Photos</button>
-    <button class="tab-button" data-tab="thumbnails">Thumbnails</button>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-danger fw-bold" href="#">Code by Zou</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#website">Websites</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bots">Bots</a></li>
+          <li class="nav-item"><a class="nav-link" href="#edits">Edits</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <div id="websites" class="tab-content active">
-    <div class="product-card">
-      <h2>🔥 Basic Website</h2>
-      <p>Clean, fast one-page site for personal or portfolio use.</p>
-      <div class="price">$50</div>
-      <a href="#" class="buy-btn">Buy Now</a>
+  <section class="section" id="website">
+    <h2>🔥 Websites</h2>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+          <div class="card p-3">
+            <h4>Basic</h4>
+            <p>One-page site</p>
+            <h5>$50</h5>
+            <a href="#" class="btn btn-red">Buy</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-3">
+            <h4>Standard</h4>
+            <p>Multi-page w/ animations</p>
+            <h5>$150</h5>
+            <a href="#" class="btn btn-red">Buy</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-3">
+            <h4>Advanced</h4>
+            <p>Backend, database, admin</p>
+            <h5>$400</h5>
+            <a href="#" class="btn btn-red">Buy</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="product-card">
-      <h2>🛠 Standard Website</h2>
-      <p>Multi-page site with animations, contact form, and mobile support.</p>
-      <div class="price">$150</div>
-      <a href="#" class="buy-btn">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <h2>🚀 Advanced Website</h2>
-      <p>Fully custom site with backend, database, dashboard, and more.</p>
-      <div class="price">$400</div>
-      <a href="#" class="buy-btn">Buy Now</a>
-    </div>
-  </div>
+  </section>
 
-  <div id="bots" class="tab-content">
-    <h2>🤖 Order a Discord Bot</h2>
-    <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
-      <p>Tell me what kind of bot you want:</p>
-      <textarea name="bot_description" placeholder="Example: I want a stock notifier with commands for !check and !add..."></textarea>
-      <br />
-      <button type="submit">Submit Bot Request</button>
+  <section class="section" id="bots">
+    <h2>🤖 Discord Bots</h2>
+    <p>Fill out what features you want and get your bot delivered fast!</p>
+    <form class="container" style="max-width: 500px;">
+      <div class="mb-3">
+        <label class="form-label">Your Email or Discord Tag</label>
+        <input type="text" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Bot Description</label>
+        <textarea class="form-control" rows="5" required></textarea>
+      </div>
+      <button class="btn btn-red" type="submit">Submit Bot Request</button>
     </form>
-  </div>
+  </section>
 
-  <div id="graphics" class="tab-content">
+  <section class="section" id="edits">
     <h2>🎨 Graphics & Edits</h2>
-    <p>Send me your ideas or images and I’ll turn them into 🔥 graphics.</p>
-    <a href="https://discord.com/users/666081987823665212" class="buy-btn">Message Me on Discord</a>
-  </div>
+    <div class="container">
+      <p>We create thumbnails, PFPs, intros and more!</p>
+      <a href="https://discord.gg/wEApuAbN9t" class="btn btn-red">Order via Discord</a>
+    </div>
+  </section>
 
-  <div id="thumbnails" class="tab-content">
-    <h2>🖼️ YouTube Thumbnails</h2>
-    <p>Custom thumbnails that get you clicks — just tell me the theme.</p>
-    <a href="https://discord.com/users/666081987823665212" class="buy-btn">Order Thumbnails</a>
-  </div>
+  <section class="section" id="contact">
+    <h2>📱 Connect</h2>
+    <a href="https://discord.gg/wEApuAbN9t" target="_blank" class="btn btn-red m-2">Join Discord</a>
+    <a href="https://www.tiktok.com/@davi7201311" target="_blank" class="btn btn-red m-2">Follow TikTok</a>
+  </section>
 
-  <script>
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-      });
-    });
-  </script>
+  <footer>
+    &copy; 2025 Code by Zou. All rights reserved.
+  </footer>
 </body>
 </html>
