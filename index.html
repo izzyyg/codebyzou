@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zou's Marketplace</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
@@ -14,85 +14,66 @@
       font-family: 'Orbitron', sans-serif;
       background: #0c0c0c;
       color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 30px;
+      letter-spacing: 1px;
+      color: #f2f2f2;
+      box-shadow: 0 4px 10px rgba(255,0,0,0.4);
+    }
+    .container {
       display: flex;
-      height: 100vh;
     }
     .sidebar {
-      width: 250px;
       background: #111;
-      display: flex;
-      flex-direction: column;
-      padding-top: 40px;
-      box-shadow: 4px 0 10px rgba(255, 0, 0, 0.2);
-    }
-    .sidebar h1 {
-      color: red;
-      font-size: 26px;
-      text-align: center;
-      margin-bottom: 30px;
+      width: 200px;
+      min-height: 100vh;
+      padding-top: 20px;
+      box-shadow: 2px 0 10px rgba(255, 0, 0, 0.3);
     }
     .sidebar a {
-      padding: 15px 30px;
-      color: #ccc;
+      display: block;
+      color: #fff;
+      padding: 15px;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
       transition: 0.3s;
     }
     .sidebar a:hover {
-      background: #ff0000;
-      color: #fff;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      padding: 20px;
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: #ddd;
-      background: #111;
-      border-bottom: 2px solid red;
+      background: red;
+      border-left: 5px solid #fff;
+      padding-left: 10px;
     }
     .content {
+      flex: 1;
       padding: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+      animation: fadeIn 0.5s ease-in-out;
     }
-    .product {
-      background: #0f0f0f;
-      border: 2px solid red;
+    .card {
+      background: #111;
+      border: 1px solid red;
       border-radius: 12px;
       padding: 20px;
-      width: 260px;
+      margin-bottom: 20px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+      transition: 0.3s ease;
     }
-    .product h2 {
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    .card h2 {
       color: red;
-      font-size: 20px;
       margin-bottom: 10px;
     }
-    .product p {
-      margin: 0 0 10px;
-      color: #ccc;
-    }
     .price {
-      background: #1a1a1a;
-      padding: 8px 16px;
-      border-radius: 8px;
       font-size: 22px;
-      color: #ff3333;
-      margin-bottom: 12px;
+      color: #0f0;
+      margin: 10px 0;
     }
     .btn {
       background: red;
@@ -100,45 +81,118 @@
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 10px;
-      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
       transition: 0.3s;
     }
     .btn:hover {
-      background: #ff4d4d;
+      background: #ff3333;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #888;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .contact-buttons a {
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: #1a1a1a;
+      border: 1px solid red;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .contact-buttons a:hover {
+      background: red;
     }
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h1>ZOU’S</h1>
-    <a href="#">📦 Products</a>
-    <a href="#">📑 Tabs</a>
-    <a href="#">🤖 Bots</a>
-    <a href="#">🖼️ Edits</a>
-    <a href="#">📞 Contact</a>
-  </div>
-  <main>
-    <header>ZOU’S MARKETPLACE</header>
-    <div class="content">
-      <div class="product">
-        <h2>🔥 Basic Website</h2>
-        <p>Clean one-page site.</p>
-        <div class="price">$50</div>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
-      <div class="product">
-        <h2>🛠 Standard Website</h2>
-        <p>Multi-page with animation.</p>
-        <div class="price">$150</div>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
-      <div class="product">
-        <h2>🚀 Advanced Website</h2>
-        <p>Full site with backend.</p>
-        <div class="price">$400</div>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
+
+  <header>ZOU’S MARKETPLACE</header>
+
+  <div class="container">
+    <div class="sidebar">
+      <a href="#products">🔥 Products</a>
+      <a href="#bots">🤖 Bots</a>
+      <a href="#edits">🎨 Edits</a>
+      <a href="#contact">📩 Contact</a>
     </div>
-  </main>
+    
+    <div class="content">
+      <section id="products">
+        <div class="card">
+          <h2>🔥 Basic Website</h2>
+          <p>Clean one-page site.</p>
+          <div class="price">$50</div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+        <div class="card">
+          <h2>🛠 Standard Website</h2>
+          <p>Multi-page with animation.</p>
+          <div class="price">$150</div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+        <div class="card">
+          <h2>🚀 Advanced Website</h2>
+          <p>Full backend + admin dashboard.</p>
+          <div class="price">$400</div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </section>
+
+      <section id="bots">
+        <div class="card">
+          <h2>🤖 Custom Discord Bots</h2>
+          <p>Let me build the bot you need: economy, moderation, logging & more.</p>
+          <div class="price">Starting at $30</div>
+          <a href="#contact" class="btn">Order Now</a>
+        </div>
+      </section>
+
+      <section id="edits">
+        <div class="card">
+          <h2>🖼️ Profile Picture Pack</h2>
+          <p>Custom Discord/TikTok avatars</p>
+          <div class="price">$15</div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+        <div class="card">
+          <h2>🎥 Video Intros</h2>
+          <p>3D-style animated intros</p>
+          <div class="price">$20</div>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>📩 Contact & Links</h2>
+        <p>Need help or have a request? Use the buttons below:</p>
+        <div class="contact-buttons">
+          <a href="https://discord.com/users/666081987823665212" target="_blank">💬 DM Me</a>
+          <a href="https://discord.gg/wEApuAbN9t" target="_blank">🧠 Join Discord</a>
+          <a href="https://discord.com/channels/1381082780188020776/1381086608173830226" target="_blank">🎟 Open Ticket</a>
+          <a href="https://www.tiktok.com/@davi7201311" target="_blank">🎵 My TikTok</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Zou’s Marketplace. All rights reserved.
+  </div>
+
 </body>
 </html>
