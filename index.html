@@ -14,67 +14,85 @@
       font-family: 'Orbitron', sans-serif;
       background: #0c0c0c;
       color: #fff;
-    }
-    header {
-      background: #111;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(255,0,0,0.3);
-    }
-    header h1 {
-      color: red;
-      font-size: 40px;
-      margin: 0;
-    }
-    nav {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: #111;
-      padding: 10px;
-      box-shadow: 0 2px 10px rgba(255,0,0,0.2);
+      height: 100vh;
     }
-    nav a {
-      color: #eee;
+    .sidebar {
+      width: 250px;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      padding-top: 40px;
+      box-shadow: 4px 0 10px rgba(255, 0, 0, 0.2);
+    }
+    .sidebar h1 {
+      color: red;
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .sidebar a {
+      padding: 15px 30px;
+      color: #ccc;
       text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       transition: 0.3s;
     }
-    nav a:hover {
-      background: red;
+    .sidebar a:hover {
+      background: #ff0000;
+      color: #fff;
     }
-    .tab-content {
-      display: none;
-      padding: 30px;
-      animation: fadeIn 0.6s ease-in-out;
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
-    .tab-content.active {
-      display: block;
+    header {
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #ddd;
+      background: #111;
+      border-bottom: 2px solid red;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .content {
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
     }
     .product {
-      background: #111;
+      background: #0f0f0f;
       border: 2px solid red;
-      border-radius: 15px;
+      border-radius: 12px;
       padding: 20px;
-      margin: 20px auto;
-      max-width: 400px;
+      width: 260px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .product h2 {
       color: red;
-      font-size: 22px;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .product p {
+      margin: 0 0 10px;
+      color: #ccc;
     }
     .price {
-      font-size: 24px;
-      color: #0f0;
-      margin: 10px 0;
+      background: #1a1a1a;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 22px;
+      color: #ff3333;
+      margin-bottom: 12px;
     }
     .btn {
       background: red;
@@ -82,121 +100,45 @@
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 10px;
-      display: inline-block;
-      margin-top: 10px;
+      font-weight: bold;
+      transition: 0.3s;
     }
     .btn:hover {
-      background: #ff3333;
-    }
-    form {
-      background: #111;
-      padding: 20px;
-      border: 2px solid red;
-      max-width: 500px;
-      margin: auto;
-      border-radius: 15px;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 8px;
-      background: #1a1a1a;
-      color: #fff;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111;
-      color: #888;
+      background: #ff4d4d;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Zou's Marketplace</h1>
-  </header>
-
-  <nav>
-    <a href="#" onclick="showTab('websites')">Websites</a>
-    <a href="#" onclick="showTab('bots')">Discord Bots</a>
-    <a href="#" onclick="showTab('edits')">Edits</a>
-    <a href="#" onclick="showTab('contact')">Contact</a>
-  </nav>
-
-  <div id="websites" class="tab-content active">
-    <div class="product">
-      <h2>🔥 Basic Website</h2>
-      <p>Clean one-page site.</p>
-      <div class="price">$50</div>
-      <a href="#" class="btn">Buy Now</a>
-    </div>
-    <div class="product">
-      <h2>🛠 Standard Website</h2>
-      <p>Multi-page with animation.</p>
-      <div class="price">$150</div>
-      <a href="#" class="btn">Buy Now</a>
-    </div>
-    <div class="product">
-      <h2>🚀 Advanced Website</h2>
-      <p>Includes backend & dashboard.</p>
-      <div class="price">$400</div>
-      <a href="#" class="btn">Buy Now</a>
-    </div>
+  <div class="sidebar">
+    <h1>ZOU’S</h1>
+    <a href="#">📦 Products</a>
+    <a href="#">📑 Tabs</a>
+    <a href="#">🤖 Bots</a>
+    <a href="#">🖼️ Edits</a>
+    <a href="#">📞 Contact</a>
   </div>
-
-  <div id="bots" class="tab-content">
-    <form>
-      <h2>🧠 Order a Custom Discord Bot</h2>
-      <input type="text" placeholder="Your Discord Username" required />
-      <textarea rows="5" placeholder="Describe the bot you want (commands, features, etc.)" required></textarea>
-      <a href="#" class="btn">Submit</a>
-    </form>
-  </div>
-
-  <div id="edits" class="tab-content">
-    <div class="product">
-      <h2>🖼️ Profile Picture Pack</h2>
-      <p>Custom Discord/TikTok PFPs</p>
-      <div class="price">$15</div>
-      <a href="#" class="btn">Buy Now</a>
+  <main>
+    <header>ZOU’S MARKETPLACE</header>
+    <div class="content">
+      <div class="product">
+        <h2>🔥 Basic Website</h2>
+        <p>Clean one-page site.</p>
+        <div class="price">$50</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="product">
+        <h2>🛠 Standard Website</h2>
+        <p>Multi-page with animation.</p>
+        <div class="price">$150</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="product">
+        <h2>🚀 Advanced Website</h2>
+        <p>Full site with backend.</p>
+        <div class="price">$400</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
     </div>
-    <div class="product">
-      <h2>🎥 Video Intro Animation</h2>
-      <p>3D/Motion graphic style intros</p>
-      <div class="price">$20</div>
-      <a href="#" class="btn">Buy Now</a>
-    </div>
-    <div class="product">
-      <h2>💻 UI Dashboard Kit</h2>
-      <p>Dark panel-style dashboard UI</p>
-      <div class="price">$25</div>
-      <a href="#" class="btn">Buy Now</a>
-    </div>
-  </div>
-
-  <div id="contact" class="tab-content">
-    <form>
-      <h2>📩 Contact Me</h2>
-      <input type="text" placeholder="Your Name" required />
-      <textarea rows="5" placeholder="Your Message..." required></textarea>
-      <a href="https://discord.gg/wEApuAbN9t" target="_blank" class="btn">Join Discord</a>
-      <a href="https://www.tiktok.com/@davi7201311" target="_blank" class="btn">View TikTok</a>
-    </form>
-  </div>
-
-  <footer>
-    &copy; 2025 Zou's Marketplace. All rights reserved.
-  </footer>
-
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => {
-        el.classList.remove('active');
-      });
-      document.getElementById(tabId).classList.add('active');
-    }
-  </script>
+  </main>
 </body>
 </html>
