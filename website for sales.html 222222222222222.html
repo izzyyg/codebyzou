@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zou | Services</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 15px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s;
+    }
+    .product:hover {
+      transform: scale(1.03);
+    }
+    .btn {
+      background: #00bfff;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #009ddc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Custom Services</h1>
+
+  <div class="container">
+    <div class="product">
+      <h3>Discord Bot</h3>
+      <p>Basic + moderation</p>
+      <h2>$10</h2>
+      <button class="btn">Order</button>
+    </div>
+
+    <div class="product">
+      <h3>Profile Picture (PFP)</h3>
+      <p>Custom profile design</p>
+      <h2>$5</h2>
+      <button class="btn">Order</button>
+    </div>
+
+    <div class="product">
+      <h3>3D Intro</h3>
+      <p>Animated intro for your brand or YouTube</p>
+      <h2>$15</h2>
+      <button class="btn">Order</button>
+    </div>
+  </div>
+</body>
+</html>
