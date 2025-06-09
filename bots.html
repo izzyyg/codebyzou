@@ -3,67 +3,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodeByZou - Discord Bots</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <title>CodeByZou | Bots</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', sans-serif;
       background-color: #0d0d0d;
-      color: #fff;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
     }
     header {
       background-color: #111;
       padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #00bfff;
+    }
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
     }
     nav a {
-      color: #fff;
-      margin-left: 15px;
+      color: #00bfff;
       text-decoration: none;
       font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
     }
-    .container {
+    nav a:hover {
+      color: #009ddc;
+    }
+    .main {
       padding: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s;
     }
-    p {
-      margin-bottom: 10px;
-      line-height: 1.6;
+    .card:hover {
+      transform: scale(1.03);
     }
-    ul {
-      margin-left: 20px;
+    .card h3 {
+      margin-top: 0;
+    }
+    .btn {
+      background-color: #00bfff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background-color: #009ddc;
     }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>CodeByZou</strong></div>
+    <h1>Custom Discord Bots</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="bots.html">Bots</a>
-      <a href="websites.html">Websites</a>
-      <a href="edits.html">Edits</a>
+      <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <div class="container">
-    <h1>Discord Bots</h1>
-    
-        <p>Need a custom bot for your server? I offer:</p>
-        <ul>
-          <li>Auto-role bots</li>
-          <li>Moderation bots</li>
-          <li>Ticket & support bots</li>
-          <li>Advanced command systems</li>
-        </ul>
-        
+  <div class="main">
+    <div class="card">
+      <h3>Basic Bot</h3>
+      <p>Moderation, ping commands, and basic utilities</p>
+      <p><strong>$10</strong></p>
+      <button class="btn">Order</button>
+    </div>
+    <div class="card">
+      <h3>Advanced Bot</h3>
+      <p>Roles, reaction menus, ticket systems</p>
+      <p><strong>$15</strong></p>
+      <button class="btn">Order</button>
+    </div>
+    <div class="card">
+      <h3>Full Server Setup</h3>
+      <p>Server structure, bot integration, custom automation</p>
+      <p><strong>$20</strong></p>
+      <button class="btn">Order</button>
+    </div>
   </div>
 </body>
 </html>
